@@ -18,6 +18,7 @@ $black-dark: #1E1E1E;
     bottom: 0;
     z-index: 2;
     background: url("assets/img/noise.png");
+    opacity: 0.5;
   }
 }
 @mixin clearfix {
