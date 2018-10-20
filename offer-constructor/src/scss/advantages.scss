@@ -1,4 +1,68 @@
 .advantages {
-  height: 790px;
   @include black-bg;
+  &__wrap {
+    position: relative;
+    z-index: 3;
+    padding: $sp*4 0;
+    margin: 0 auto;
+    width: 1170px;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: $sp*3;
+    width: 1170px;
+  }
+  &__item {
+    flex: 0 0 calc((100% /6) - 15px);
+    padding: $sp*2 $sp;
+    background-image: linear-gradient(-180deg, #59CCEC 0%, #2D9DD5 100%);
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+    &:hover {
+      background-image: linear-gradient(-180deg, #E4486E 7%, #DB2A55 100%);
+      box-shadow: 2px 2px 6px 0 rgba(0,0,0,0.50);
+      .advantages__item-text {
+        border-top: 1px solid #F2ADBE;
+      }
+    }
+    &-number {
+      font-size: 50px;
+      font-weight: 900;
+      margin-bottom: $sp;
+    }
+    &-text {
+      font-size: 14px;
+      font-weight: 500;
+      border-top: 1px solid #B2E2F3;
+      padding-top: $sp;
+      line-height: 1.4;
+    }
+  }
+  &__after {
+    display: flex;
+    margin-top: $sp*5;
+    &-left, &-right {
+      flex: 1;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      margin: 0 $sp;
+
+    }
+    &-line {
+      height: 2px;
+      background: white;
+      flex: 0 0 50px;
+      margin-top: 2px;
+      opacity: 0.3;
+    }
+    &-text {
+      margin: 0 $sp;
+      text-align: center;
+      font-weight: 900;
+      font-size: 20px;
+    }
+  }
 }
