@@ -1,2 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'scss/reset';
+@import "scss/vareables";
+@import 'scss/header';
+@import 'scss/content';
+@import 'scss/footer';
+@import 'scss/wrapper';
 
+@import 'scss/top-banner';
+@import 'scss/how-it-works';
+@import 'scss/video';
+@import 'scss/advantages';
+@import 'scss/api-block';
