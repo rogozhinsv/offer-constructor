@@ -6,6 +6,7 @@
   left: 0;
   right: 0;
   color: white;
+  z-index: 1000;
   &__wrap {
     margin: 0 $sp*2;
     display: flex;

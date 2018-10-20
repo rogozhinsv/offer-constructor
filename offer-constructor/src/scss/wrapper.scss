@@ -4,4 +4,14 @@
   min-height: 100%;
   height: auto !important;
   height: 100%;
+  &_home {
+    h2 {
+      color: white;
+      font-size: 30px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      text-align: center;
+    }
+  }
 }

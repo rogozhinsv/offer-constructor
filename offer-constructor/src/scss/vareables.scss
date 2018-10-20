@@ -1,4 +1,33 @@
 $sp: 15px;
 $blue: #40A9DB;
 $red: #FF4774;
-$black: #1E1E1E;
+$black: #2F2F31;
+$black-dark: #1E1E1E;
+
+@mixin black-bg {
+  background: linear-gradient(to right, #4c4c4c 0%, #131313 100%);
+  z-index: 1;
+  position: relative;
+  color: white;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background: url("assets/img/noise.png");
+  }
+}
+@mixin clearfix {
+  display: inline-block;
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  * html & { height: 1px }
+}

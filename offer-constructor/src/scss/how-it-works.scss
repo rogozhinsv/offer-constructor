@@ -1,4 +1,50 @@
 .how-it-works {
-  height: 410px;
-  background: $black;
+  @include black-bg;
+  &__wrap {
+    position: relative;
+    z-index: 3;
+    padding: $sp*4 0;
+    margin: 0 auto;
+    width: 870px;
+  }
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 200px;
+    margin-top: $sp*4;
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 0 0 160px;
+  }
+  &__box {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: $sp;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      font-size: 60px;
+    }
+
+  }
+  &__text {
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.3;
+  }
+  &__line {
+    height: 3px;
+    width: 100%;
+    background: white;
+    margin: 65px 10px 0;
+  }
 }

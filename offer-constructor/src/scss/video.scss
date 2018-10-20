@@ -1,4 +1,22 @@
 .video {
-  height: 815px;
-  background: red;
+
+  background: $black-dark;
+  &__wrap {
+    position: relative;
+    z-index: 3;
+    padding: $sp*4 0;
+    margin: 0 auto;
+    width: 870px;
+  }
+  &__text {
+    color: white;
+    text-align: center;
+    margin-top: $sp*2;
+    margin-bottom: $sp*2;
+    line-height: 1.3;
+    font-size: 20px;
+  }
+  &__box {
+    width: 940px;
+  }
 }
