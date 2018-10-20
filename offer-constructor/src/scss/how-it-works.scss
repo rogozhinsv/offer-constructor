@@ -24,8 +24,9 @@
     flex: 0 0 160px;
     &:hover {
       .how-it-works__box {
+        border-color: $red;
         i {
-          color: $red;
+          font-size: 65px;
         }
       }
     }

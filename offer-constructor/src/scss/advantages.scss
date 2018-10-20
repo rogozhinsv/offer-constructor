@@ -19,41 +19,38 @@
   &__item {
     flex: 0 0 calc((100% /6) - 15px);
     padding: $sp*2 $sp;
-    background-image: linear-gradient(-180deg, #59CCEC 0%, #2D9DD5 100%);
+    //background-image: linear-gradient(-180deg, #59CCEC 0%, #2D9DD5 100%);
+    background: $blue;
     text-align: center;
-    border-radius: 2px;
+    border-radius: 3px;
     cursor: pointer;
     position: relative;
     z-index: 1;
-    &:before {
-      content: '';
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: linear-gradient(-180deg, #E4486E 7%, #DB2A55 100%);
-      z-index: 2;
-      display: block;
-      position: absolute;
-      opacity: 0;
-      transition: 0.5s all;
-    }
+    border: 1px solid transparent;
+    transition: all 0.3s;
+
     &:hover {
+      //background-image: linear-gradient(-180deg, #E4486E 7%, #DB2A55 100%);
       box-shadow: 2px 2px 6px 0 rgba(0,0,0,0.50);
-      &:before {
-        opacity: 1;
-      }
-      .advantages__item-text {
-        border-top: 1px solid #F2ADBE;
+      background: none;
+      border: 1px solid #B2E2F3;
+      .advantages__item-number {
+        font-size: 60px;
+        text-shadow: 2px 2px 2px $black-dark;
       }
     }
     &-number {
       font-size: 50px;
       font-weight: 900;
-      margin-bottom: $sp;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
       z-index: 3;
-      transition: 0.5s all;
+      transition: 0.2s all;
+      height: 80px;
+      display: block;
+
     }
     &-text {
       font-size: 14px;
@@ -63,6 +60,7 @@
       line-height: 1.4;
       position: relative;
       z-index: 3;
+
     }
   }
   &__after {
@@ -93,7 +91,7 @@
     }
   }
   &__chart {
-    background: url('/assets/img/chart.png') no-repeat;
+    background: url('/assets/img/chart.svg') no-repeat;
     background-position: 100% bottom;
     background-size: contain;
     position: absolute;

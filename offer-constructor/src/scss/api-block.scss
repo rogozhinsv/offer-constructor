@@ -2,4 +2,47 @@
   background: $red;
   color: white;
   height: 150px;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background: url("assets/img/noise.png");
+    opacity: 0.5;
+  }
+  &__wrap {
+    width: 900px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+  }
+  &__api {
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-right: $sp*2;
+    padding: $sp $sp*2;
+
+  }
+  &__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__text {
+    font-size: 20px;
+    font-weight: 900;
+  }
 }

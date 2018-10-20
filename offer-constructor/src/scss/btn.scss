@@ -1,0 +1,24 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s;
+  &_big {
+    height: 70px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0 70px;
+    text-transform: uppercase;
+  }
+  &_transition {
+    border: 2px solid white;
+    &:hover {
+      color: $red;
+      background: white;
+    }
+
+
+  }
+}
