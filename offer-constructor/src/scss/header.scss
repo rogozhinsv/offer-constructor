@@ -6,4 +6,25 @@
   left: 0;
   right: 0;
   color: white;
+  &__wrap {
+    margin: 0 $sp*2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+  }
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+  &__right {
+
+  }
+  &__logo {
+    display: block;
+    width: 52px;
+    height: 28px;
+    background:url("assets/img/logo-time.png") no-repeat;
+    margin-right: $sp*2;
+  }
 }
