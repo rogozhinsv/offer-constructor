@@ -1,4 +1,64 @@
 .top-banner {
   height: 800px;
   background: $blue;
+  &__wrap {
+    margin: 0 auto;
+    max-width: 1170px;
+    display: flex;
+    padding-top: 70px;
+    height: 100%;
+  }
+  &__left {
+    flex: 1;
+    color: white;
+    &-wrap {
+      margin-top: $sp*6;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  &__right {
+    border: 1px solid red;
+    flex: 1;
+  }
+  &__logo {
+    background: url('assets/img/big-logo.svg') no-repeat;
+    background-size: contain;
+    height: 130px;
+    width: 100%;
+    margin-bottom: $sp*5;
+  }
+  &__title {
+    font-weight: 900;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: $sp;
+  }
+  &__text {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: $sp*3;
+  }
+  &__link {
+    font-size: 20px;
+    a {
+      text-decoration: none;
+      border-bottom: 1px solid white;
+      color: white;
+
+      font-weight: 600;
+    }
+    i {
+      color: white;
+      font-size: 24px;
+      position: relative;
+      top: 4px;
+      margin-right: $sp/3;
+    }
+  }
+  &__btns {
+    margin-top: $sp*4;
+  }
 }

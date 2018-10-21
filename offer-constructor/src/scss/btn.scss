@@ -12,6 +12,21 @@
     padding: 0 70px;
     text-transform: uppercase;
   }
+  &_red {
+    background: $red;
+    border: 2px solid transparent;
+    color: white;
+    flex: 0 0 10px;
+    padding: 0 30px;
+    max-width: 500px;
+    i {
+      margin-right: $sp/2;
+    }
+    &:hover {
+      border: 2px solid white;
+      background: none;
+    }
+  }
   &_transition {
     border: 2px solid white;
     &:hover {
