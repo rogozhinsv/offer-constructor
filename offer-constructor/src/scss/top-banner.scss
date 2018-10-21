@@ -1,6 +1,8 @@
 .top-banner {
   height: 800px;
-  background: $blue;
+  background: url("assets/img/bg-blue.jpg") no-repeat;
+  background-size: cover !important;
+  //background-position: center;
   &__wrap {
     margin: 0 auto;
     max-width: 1170px;
