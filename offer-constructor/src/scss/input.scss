@@ -1,0 +1,15 @@
+.input {
+  padding: $sp/2;
+  width: 100%;
+  outline: none;
+  min-height: 40px;
+  box-shadow: none !important;
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+
+  &:focus {
+    background: #f1f1f1;
+
+  }
+
+}
