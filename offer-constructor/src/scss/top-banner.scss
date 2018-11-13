@@ -13,6 +13,7 @@
   &__left {
     flex: 1;
     color: white;
+    max-width: 50% ;
     &-wrap {
       margin-top: $sp*6;
       display: flex;
@@ -21,8 +22,10 @@
     }
   }
   &__right {
-    border: 1px solid red;
     flex: 1;
+    background: url('assets/img/Miranda2.png') no-repeat bottom;
+    background-size: auto 95%;
+
   }
   &__logo {
     background: url('assets/img/big-logo.svg') no-repeat;
@@ -49,8 +52,7 @@
       text-decoration: none;
       border-bottom: 1px solid white;
       color: white;
-
-      font-weight: 600;
+      font-weight: 500;
     }
     i {
       color: white;
