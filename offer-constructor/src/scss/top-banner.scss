@@ -24,7 +24,12 @@
   &__right {
     flex: 1;
     position: relative;
-
+    &:hover {
+      .top-banner__paper {
+        animation: paper  1s normal;
+        animation-fill-mode:forwards;
+      }
+    }
 
   }
   &__paper {
@@ -32,9 +37,37 @@
     width: 100%;
     background: url('assets/img/paper.png') no-repeat ;
     background-size: 100% auto;
-    background-position: 0 20px;
+    background-position: center 20px;
     position: absolute;
+    animation: paper2  1s normal;
+    animation-fill-mode:forwards;
   }
+
+
+  @keyframes paper {
+    from {
+      opacity: 1;
+      background-size: 100% auto;
+
+    }
+    to {
+      opacity: 0.5;
+      background-size: 90% auto;
+    }
+  }
+  @keyframes paper2 {
+    from {
+
+      opacity: 0.5;
+      background-size: 90% auto;
+
+    }
+  to {
+    opacity: 1;
+    background-size: 100% auto;
+    }
+  }
+
   &__girl {
     position: absolute;
     height: 100%;
