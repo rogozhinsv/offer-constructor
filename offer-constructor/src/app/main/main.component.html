@@ -16,8 +16,8 @@
         </div>
         <div class="header__menu">
 
-          <i class="mdi mdi-menu" (click)="active = !active"></i>
-          <div class="header__menu-list active" [ngClass]="{active: active}">
+          <i class="mdi mdi-menu" (click)="active = !active" [ngClass]="{active: active}"></i>
+          <div class="header__menu-list" [ngClass]="{active: active}">
             <div class="header__menu-item" routerLink="/login" >Выход <i class="mdi mdi-export"></i></div>
             <div class="header__menu-item">Настройки <i class="mdi mdi-settings"></i></div>
             <div class="header__menu-item">Ваши КП <i class="mdi mdi-playlist-check"></i></div>

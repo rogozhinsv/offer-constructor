@@ -54,6 +54,13 @@
       line-height: 70px;
       display: block;
       cursor: pointer;
+      &.active {
+        &:before {
+          content: "\F156";
+          font-family: "Material Design Icons";
+
+        }
+      }
     }
     &-list {
       //background: #3E92B7;
