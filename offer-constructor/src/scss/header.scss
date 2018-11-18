@@ -38,7 +38,6 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: red;
       margin-right: $sp/2 + 5px;
       background-size: cover !important;
 
@@ -48,8 +47,54 @@
     }
   }
   &__menu {
-    i {
+    position: relative;
+    & > i {
       font-size: 28px;
+      height: 70px;
+      line-height: 70px;
+      display: block;
+      cursor: pointer;
+    }
+    &-list {
+      //background: #3E92B7;
+      background: rgba(62, 146, 183, 0.9);
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      width: 235px;
+
+      display: none;
+      border-radius: 4px;
+      &.active {
+        display: block;
+        animation: vizible  .3s;
+      }
+    }
+    &-item {
+      padding: $sp $sp;
+      min-height: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #62ABCB;
+      transition: all 0.3s;
+      cursor: pointer;
+      outline: none;
+      i {
+        font-size: 20px;
+      }
+      &:hover {
+        background: rgba(0, 0, 0, 0.1);
+        background: $red;
+        //color: $dark-text;
+      }
+      &:first-child {
+        border-radius: 4px 4px 0 0;
+      }
+      &:last-child {
+        border-bottom: none;
+        border-radius: 0 0 4px 4px;
+      }
     }
   }
 }

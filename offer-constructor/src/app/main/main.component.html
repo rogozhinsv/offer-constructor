@@ -15,7 +15,14 @@
           <div class="header__user-name">Ванадий Гейлерман</div>
         </div>
         <div class="header__menu">
-          <i class="mdi mdi-menu"></i>
+
+          <i class="mdi mdi-menu" (click)="active = !active"></i>
+          <div class="header__menu-list active" [ngClass]="{active: active}">
+            <div class="header__menu-item" routerLink="/login" >Выход <i class="mdi mdi-export"></i></div>
+            <div class="header__menu-item">Настройки <i class="mdi mdi-settings"></i></div>
+            <div class="header__menu-item">Ваши КП <i class="mdi mdi-playlist-check"></i></div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -33,10 +40,12 @@
               Дело в том, что управление брендом исключительно создает межличностный BTL. VIP-мероприятие программирует
               жизненный цикл продукции.
             </div>
-            <div class="top-banner__link"><i class="mdi mdi-file-document-box"></i> <a href="">Посмотреть пример КП</a></div>
+            <div class="top-banner__link"><i class="mdi mdi-file-document-box"></i> <a href="">Посмотреть пример КП</a>
+            </div>
             <div class="top-banner__btns">
               <div class="btn btn_big btn_red">
-                <i class="mdi mdi-auto-fix"></i>Создать коммерческое предложение</div>
+                <i class="mdi mdi-auto-fix"></i>Создать коммерческое предложение
+              </div>
             </div>
           </div>
         </div>
@@ -98,8 +107,9 @@
         <div class="video__box">
 
 
-          <iframe width="870" height="500" src="https://www.youtube.com/embed/3pp3x6YiOys" frameborder="0" allow="autoplay; encrypted-media"
-            allowfullscreen></iframe>
+          <iframe width="870" height="500" src="https://www.youtube.com/embed/3pp3x6YiOys" frameborder="0"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen></iframe>
 
 
         </div>

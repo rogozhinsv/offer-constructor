@@ -3,6 +3,7 @@ $blue: #40A9DB;
 $red: #FF4774;
 $black: #2F2F31;
 $black-dark: #1E1E1E;
+$dark-text: #607d8b;
 
 @mixin black-bg {
   background: linear-gradient(to right, #4c4c4c 0%, #131313 100%);
@@ -31,4 +32,18 @@ $black-dark: #1E1E1E;
     visibility: hidden;
   }
   * html & { height: 1px }
+}
+
+
+
+
+@keyframes vizible {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
