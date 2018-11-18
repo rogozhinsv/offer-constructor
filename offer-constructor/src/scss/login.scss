@@ -3,7 +3,8 @@
   background: white;
   padding: $sp*3 $sp*4;
   border-radius: 10px;
-  box-shadow: 1px 1px 5px 0px #00000036;
+  //box-shadow: 1px 1px 5px 0px #00000036;
+  box-shadow: 1px 5px 20px 0px #00000026;
   font-size: 16px;
   position: relative;
   z-index: 10;
@@ -60,6 +61,7 @@
       font-size: 14px !important;
       padding: 0 $sp;
       min-width: 140px;
+      outline: none;
       //border-radius: 4px;
       height: 40px;
       border: 1px solid transparent;
