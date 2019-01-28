@@ -1,3 +1,23 @@
-<p>
-  register works!
-</p>
+<div class="login__wrap">
+  <div class="login">
+    <div class="login__header">Регистрация</div>
+
+    <div class="login__line">
+      <input #tbxLoginInput type="text" [(ngModel)]="tbxLogin" class="input" placeholder="Email" (keyup.enter)="onRegisterClick($event)">
+    </div>
+    <div class="login__line">
+      <input type="text" class="input" [(ngModel)]="tbxPassword" (keyup.enter)="onRegisterClick($event)" placeholder="Пароль">
+    </div>
+
+    <div class="login__line" *ngIf="RegistrationError">
+      <span class="login__line_error">{{RegistrationError}}</span>
+    </div>
+
+    <div class="login__line">
+      <div class="login__btns">
+        <button class="btn btn_red" (click)="onRegisterClick($event)">
+          <i class="mdi mdi-lock-open-outline"></i>Создать</button>
+      </div>
+    </div>
+  </div>
+</div>

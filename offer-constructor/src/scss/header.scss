@@ -29,11 +29,21 @@
     background:url("assets/img/logo-time.png") no-repeat;
     margin-right: $sp*2;
   }
+  &__login {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
   &__user {
     flex-wrap: nowrap;
     display: flex;
     align-items: center;
     margin-right: $sp*3;
+
+    &_auth {
+      margin-right: 0;
+    }
+
     &-photo {
       width: 40px;
       height: 40px;

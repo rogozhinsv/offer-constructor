@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-
-  constructor() { }
+  public get IsAuth(): boolean {
+    return this.srvcAuth.isAuth();
+  }
+  
+  constructor(private srvcAuth: AuthService) { }
 
   ngOnInit() {
   }
