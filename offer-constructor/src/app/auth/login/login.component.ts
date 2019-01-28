@@ -34,10 +34,11 @@ export class LoginComponent implements OnInit {
     if (this.tbxLogin && this.tbxPassword) {
       this.srvcAuth.login(this.tbxLogin, this.tbxPassword).subscribe((data: LoginUserResponse) => {
         if (data.result) {
+          localStorage.setItem('offerConstructoJwtToken', data.token);
           this.router.navigate(["/"]);
         }
         else {
-          this._loginError = "Неверный логин/пароль";
+          this._loginError = "Неверный логин/пароль.";
         }
       });
     }

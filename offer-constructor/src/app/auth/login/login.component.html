@@ -7,7 +7,7 @@
       <input #tbxLoginInput [(ngModel)]="tbxLogin" type="text" class="input" (keyup.enter)="onLoginClick($event)" placeholder="Email">
     </div>
     <div class="login__line">
-      <input [(ngModel)]="tbxPassword" type="text" class="input" placeholder="Пароль" (keyup.enter)="onLoginClick($event)">
+      <input [(ngModel)]="tbxPassword" type="password" class="input" placeholder="Пароль" (keyup.enter)="onLoginClick($event)">
     </div>
 
     <div class="login__line" *ngIf="LoginError">
