@@ -18,6 +18,9 @@
       <div class="header__menu-item">Настройки
         <i class="mdi mdi-settings"></i>
       </div>
+      <div class="header__menu-item" [routerLink]="['/personal']">Профиль
+          <i class="mdi mdi-account"></i>
+        </div>
       <div class="header__menu-item" (click)="btnLogoutClicked($event)">Выход
         <i class="mdi mdi-export"></i>
       </div>

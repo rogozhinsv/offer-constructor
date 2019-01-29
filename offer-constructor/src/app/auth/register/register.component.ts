@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { ExistUserResponse, RegisterUserResponse } from '../../models/api-auth';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators, FormControl, ValidationErrors } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { } from "rxjs/operators";
+import { RegisterUserResponse } from 'src/app/models/api-auth';
 
 @Component({
   selector: 'app-register',
@@ -11,42 +14,44 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   @ViewChild("tbxLoginInput") tbxLoginInput: ElementRef;
 
-  public tbxLogin: string;
-  public tbxPassword: string;
-
-  private _registrationError: string;
-  public get RegistrationError(): string {
-    return this._registrationError;
-  }
+  public registerFormGroup: FormGroup;
 
   constructor(
     private srvcAuth: AuthService,
-    private router: Router
+    private router: Router,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
     this.tbxLoginInput.nativeElement.focus();
+    this.initForm();
   }
 
-  public onRegisterClick(event: any): void {
-    this._registrationError = "";
-    if (this.tbxLogin && this.tbxPassword) {
-      this.srvcAuth.isUserExist(this.tbxLogin).subscribe((data: ExistUserResponse) => {
-        if (data.result) {
-          this._registrationError = "Пользователь с данным логином уже существует."
+  private initForm(): void {
+    this.registerFormGroup = this.formBuilder.group({
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, [Validators.required, Validators.minLength(8)]]
+    });
+  }
+
+  public onSubmit(): void {
+    if (this.registerFormGroup.valid) {
+      this.srvcAuth.isUserExist(this.registerFormGroup.controls.email.value).subscribe(x => {
+        if (x.result) {
+          this.registerFormGroup.controls.email.setErrors({ "userExist": true });
         }
         else {
-          this.srvcAuth.register(this.tbxLogin, this.tbxPassword).subscribe((data: RegisterUserResponse) => {
+          this.srvcAuth.register(this.registerFormGroup.controls.email.value, this.registerFormGroup.controls.password.value).subscribe((data: RegisterUserResponse) => {
             if (data.result) {
               this.router.navigate(["/"]);
             }
-            else {
-              this._registrationError = "error";
-            }
-          })
+          });
         }
       });
     }
+    else {
+      this.registerFormGroup.controls.email.markAsTouched();
+      this.registerFormGroup.controls.password.markAsTouched();
+    }
   }
-
 }
