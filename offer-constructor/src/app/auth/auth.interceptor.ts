@@ -13,11 +13,14 @@ export class TokenInterceptor implements HttpInterceptor {
     ) { }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        request = request.clone({
-            setHeaders: {
-                Authorization: `Bearer ${this.srvcAuth.getToken()}`
-            }
-        });
+        let token = this.srvcAuth.getToken();
+        if (token) {
+            request = request.clone({
+                setHeaders: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+        }
         return next.handle(request).pipe(
             tap(
                 (event: HttpEvent<any>) => {
@@ -27,7 +30,7 @@ export class TokenInterceptor implements HttpInterceptor {
                 }, (err: any) => {
                     if (err instanceof HttpErrorResponse) {
                         if (err.status === 401 || err.status == 403) {
-                            this.router.navigate(["/login"]);
+                            this.router.navigate(["/login"], { queryParams: { src: this.router.url } });
                         }
                     }
                 }

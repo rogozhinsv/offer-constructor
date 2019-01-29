@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { LoginUserResponse } from '../../models/api-auth';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private srvcAuth: AuthService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -35,7 +36,11 @@ export class LoginComponent implements OnInit {
       this.srvcAuth.login(this.tbxLogin, this.tbxPassword).subscribe((data: LoginUserResponse) => {
         if (data.result) {
           localStorage.setItem('offerConstructoJwtToken', data.token);
-          this.router.navigate(["/"]);
+
+          this.route.queryParams.subscribe(params => {
+            let src = params["src"] || "/";
+            this.router.navigate([decodeURI(src)]);
+          });
         }
         else {
           this._loginError = "Неверный логин/пароль.";

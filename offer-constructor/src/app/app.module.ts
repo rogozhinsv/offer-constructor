@@ -9,13 +9,19 @@ import { AppRoutingModule } from './routing/app-route';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { TokenInterceptor } from './auth/auth.interceptor';
+import { PersonalComponent } from './personal/personal.component';
+import { HeaderComponent } from './controls/header/header.component';
+import { HeaderRightComponent } from './controls/header-right/header-right.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PersonalComponent,
+    HeaderComponent,
+    HeaderRightComponent
   ],
   imports: [
     BrowserModule,

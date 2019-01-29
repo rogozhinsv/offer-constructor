@@ -10,8 +10,9 @@ import { ExistUserResponse, RegisterUserResponse, LoginUserResponse, CurrentUser
 export class AuthService {
     constructor(private srvcHttpClient: HttpClient) { }
 
-    public isAuth(): boolean {
-        return false;
+    public isAuth(): Observable<boolean> {
+        let url = environment.api + "/isAuth";
+        return this.srvcHttpClient.get<any>(url);
     }
 
     public getUserName(user: User): string {

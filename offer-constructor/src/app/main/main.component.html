@@ -3,33 +3,14 @@
   <div class="header">
     <div class="header__wrap">
       <div class="header__left">
-        <a href="/" class="header__logo"></a>
+        <a [routerLink]="['/']" class="header__logo"></a>
         <div class="top-menu">
           <div class="top-menu__item">О продукте</div>
           <div class="top-menu__item">Цены</div>
         </div>
       </div>
-      <div class="header__right">
-        <div class="header__user" *ngIf="CurrentUser">
-          <div class="header__user-photo" style="background: url('/assets/img/r1.jpg');"></div>
-          <div class="header__user-name">{{srvcAuth.getUserName(CurrentUser)}}</div>
-        </div>
-        <div class="header__user header__user_auth" *ngIf="!CurrentUser">          
-          <div class="header__user-name">
-            <a [routerLink]="['/login']" class="header__login" title="Войти">Войти</a>
-          </div>
-        </div>
-        <div class="header__menu" *ngIf="CurrentUser">
 
-          <i class="mdi mdi-menu" (click)="active = !active" [ngClass]="{active: active}"></i>
-          <div class="header__menu-list" [ngClass]="{active: active}">
-            <div class="header__menu-item">Ваши КП <i class="mdi mdi-playlist-check"></i></div>
-            <div class="header__menu-item">Настройки <i class="mdi mdi-settings"></i></div>
-            <div class="header__menu-item" (click)="btnLogoutClicked($event)" >Выход <i class="mdi mdi-export"></i></div>
-          </div>
-
-        </div>
-      </div>
+      <app-header-right></app-header-right>
     </div>
   </div>
 
