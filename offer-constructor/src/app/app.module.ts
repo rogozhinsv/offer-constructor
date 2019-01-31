@@ -12,6 +12,7 @@ import { TokenInterceptor } from './auth/auth.interceptor';
 import { PersonalComponent } from './personal/personal.component';
 import { HeaderComponent } from './controls/header/header.component';
 import { HeaderRightComponent } from './controls/header-right/header-right.component';
+import { ImageUploaderComponent } from './controls/image-uploader/image-uploader.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HeaderRightComponent } from './controls/header-right/header-right.compo
     RegisterComponent,
     PersonalComponent,
     HeaderComponent,
-    HeaderRightComponent
+    HeaderRightComponent,
+    ImageUploaderComponent
   ],
   imports: [
     BrowserModule,
