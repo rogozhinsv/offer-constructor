@@ -22,4 +22,10 @@ export interface User {
     firstname: string;
     lastname: string;
     surname: string;
+    avatar?: any;
+}
+
+export interface UpdateUserResponse {
+    result: boolean;
+    data: User;
 }

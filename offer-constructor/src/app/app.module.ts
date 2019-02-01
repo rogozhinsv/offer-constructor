@@ -13,6 +13,7 @@ import { PersonalComponent } from './personal/personal.component';
 import { HeaderComponent } from './controls/header/header.component';
 import { HeaderRightComponent } from './controls/header-right/header-right.component';
 import { ImageUploaderComponent } from './controls/image-uploader/image-uploader.component';
+import { AvatarModule } from 'ngx-avatar';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ImageUploaderComponent } from './controls/image-uploader/image-uploader
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AvatarModule
   ],
   providers: [
     {

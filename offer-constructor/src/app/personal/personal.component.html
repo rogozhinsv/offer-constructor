@@ -8,20 +8,42 @@
         <form (submit)="onSubmit()" [formGroup]="formGroupPersonal">
             <div class="content-page_personal">
                 <div class="content-page_personal_left">
-                    <app-image-uploader [options]="imgUploaderOption" (upload)="onUploadImage($event)"></app-image-uploader>
+                    <div *ngIf="CurrentUser && CurrentUser.avatar && !IsEditingAvatar">
+                        <div *ngIf="CurrentUser && CurrentUser.avatar" class="content-page_personal_avatar" [ngStyle]="{ 'background-image': 'url(' + srvcAuth.getAvatarImageAsBase64(CurrentUser) + ')'}"></div>
+
+                        <div class="content-page_personal__btns content-page_personal__btns_center">
+                            <button type="button" class="btn btn_red" (click)="onEditAvatar_Clicked($event)">
+                                <i class="mdi mdi-pencil"></i>Изменить</button>
+                        </div>
+                    </div>
+
+                    <app-image-uploader *ngIf="IsEditingAvatar" #ctrlAvatar [options]="imgUploaderOption"></app-image-uploader>
                 </div>
 
                 <div class="content-page_personal_rigth">
                     <div class="content-page__line">
-                        <input formControlName="lastName" type="text" class="input" placeholder="Фамилия">
+                        <input formControlName="email" type="text" class="input">
                     </div>
 
                     <div class="content-page__line">
-                        <input formControlName="firstName" type="text" class="input" placeholder="Имя">
+                        <input formControlName="lastname" type="text" class="input" placeholder="Фамилия">
                     </div>
 
                     <div class="content-page__line">
-                        <input formControlName="surName" type="text" class="input" placeholder="Отчество">
+                        <input formControlName="firstname" type="text" class="input" placeholder="Имя">
+                    </div>
+
+                    <div class="content-page__line">
+                        <input formControlName="surname" type="text" class="input" placeholder="Отчество">
+                    </div>
+
+                    <div class="content-page__line">
+                        <div class="content-page_personal__btns">
+                            <button type="button" class="btn btn_red" (click)="onBtnCancel_Clicked($event);">
+                                <i class="mdi mdi-close-circle"></i>Отмена</button>
+                            <button type="submit" class="btn btn_red">
+                                <i class="mdi mdi-content-save"></i>Сохранить</button>
+                        </div>
                     </div>
                 </div>
             </div>

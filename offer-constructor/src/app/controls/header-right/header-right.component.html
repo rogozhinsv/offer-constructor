@@ -1,6 +1,10 @@
 <div class="header__right">
   <div class="header__user" *ngIf="CurrentUser">
-    <div class="header__user-photo" style="background: url('/assets/img/r1.jpg');"></div>
+    <div *ngIf="CurrentUser.avatar" class="header__user-photo" 
+    [ngStyle]="{ 'background-image': 'url(' + srvcAuth.getAvatarImageAsBase64(CurrentUser) + ')'}"></div>
+
+    <ngx-avatar size="40" *ngIf="!CurrentUser.avatar" [name]="srvcAuth.getUserName(CurrentUser)"></ngx-avatar>
+
     <div class="header__user-name">{{srvcAuth.getUserName(CurrentUser)}}</div>
   </div>
   <div class="header__user header__user_auth" *ngIf="!CurrentUser">

@@ -32,7 +32,7 @@ export class HeaderRightComponent implements OnInit {
       }
     });
 
-  }
+  }  
 
   public btnLogoutClicked(event: any): void {
     this.srvcAuth.logout();
