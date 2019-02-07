@@ -17,7 +17,7 @@
                         </div>
                     </div>
 
-                    <app-image-uploader *ngIf="IsEditingAvatar" #ctrlAvatar [options]="imgUploaderOption"></app-image-uploader>
+                    <app-image-uploader *ngIf="IsEditingAvatar || (CurrentUser && !CurrentUser.avatar)" #ctrlAvatar [options]="imgUploaderOption"></app-image-uploader>
                 </div>
 
                 <div class="content-page_personal_rigth">
