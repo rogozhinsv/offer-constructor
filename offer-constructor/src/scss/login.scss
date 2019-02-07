@@ -1,31 +1,22 @@
 .login {
   width: 450px;
-  background: white;
-  padding: $sp*3 $sp*4;
-  border-radius: 10px;
+  background: rgba(white, 0.95);
+  padding: $sp*10 $sp*4;
+  //border-radius: 10px;
   //box-shadow: 1px 1px 5px 0px #00000036;
-  box-shadow: 1px 5px 20px 0px #00000026;
+  //box-shadow: 1px 5px 20px 0px #00000026;
   font-size: 16px;
   position: relative;
   z-index: 10;
-  &__link {
-    position: absolute;
-    bottom: -30px;
-    left: calc(50% - 55px);
-    font-size: 14px;
-    color: white;
-    border-bottom: 1px solid;
-    cursor: pointer;
-
-  }
+  animation: logwin 0.5s;
   &__wrap {
     //@include black-bg;
     background: url("/assets/img/bg-blue.jpg");
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    //align-items: center;
+    //justify-content: flex-end;
     &:before {
       content: '';
       position: absolute;
@@ -34,45 +25,75 @@
       right: 0;
       bottom: 0;
       z-index: 2;
-      background: url("assets/img/noise.png");
+      background: url("/assets/img/noise.png");
       opacity: 0.5;
     }
   }
+  &__logo {
+    background: url("/assets/img/logo-go-black.svg");
+    width: 100%;
+    height: 50px;
+    background-size: 100% auto;
+    margin-bottom: $sp*6;
+  }
   &__header {
-    font-weight: 900;
-    font-size: 24px;
+    //font-weight: 900;
+    font-size: 22px;
     margin-bottom: $sp+10;
-    color: #607d8b;
+    color: black;
     text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 5px;
+    //text-align: center;
+    //letter-spacing: 5px;
   }
   &__line {
-    margin-bottom: $sp/2;
+    margin-bottom: $sp;
     .input {
       font-size: 14px;
+      padding: $sp;
     }
 
     &_error {
-      color: red;
+      color: $red;
     }
   }
   &__btns {
     margin-top: $sp*2;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
     .btn_red {
       font-size: 14px !important;
       padding: 0 $sp;
-      min-width: 140px;
+      min-width: 120px;
       outline: none;
-      //border-radius: 4px;
-      height: 40px;
+      height: 49px;
       border: 1px solid transparent;
       &:hover {
         border: 1px solid $red;
         color: black;
       }
     }
+  }
+  &__link {
+    font-size: 14px;
+    color: $blue;
+    border-bottom: 1px dotted;
+    cursor: pointer;
+    margin-left: $sp;
+    outline: none;
+  }
+}
+
+
+@keyframes logwin {
+  from {
+
+    transform: translateX(-450px);
+
+
+  }
+  to {
+    transform: translateX(0px);
+
   }
 }

@@ -3,7 +3,9 @@
 
     <form (submit)="onSubmit()" [formGroup]="loginFormGroup">
 
-      <div class="login__link" [routerLink]="['/register']">Зарегистрироваться</div>
+      <div class="login__logo"></div>
+
+
       <div class="login__header">Вход</div>
 
       <div class="login__line">
@@ -13,14 +15,17 @@
       <div class="login__line">
         <input formControlName="password" type="password" class="input" placeholder="Пароль">
       </div>
-      <div class="login__line" *ngIf="loginFormGroup.controls.password.errors && loginFormGroup.controls.password.errors.invalidAccount">
+      <div class="login__line"
+           *ngIf="loginFormGroup.controls.password.errors && loginFormGroup.controls.password.errors.invalidAccount">
         <span class="login__line_error">Неверный логин/пароль</span>
       </div>
 
       <div class="login__line">
         <div class="login__btns">
           <button type="submit" class="btn btn_red">
-            <i class="mdi mdi-lock-open-outline"></i>Войти</button>
+            <i class="mdi mdi-lock-open-outline"></i>Войти
+          </button>
+          <div class="login__link" [routerLink]="['/register']">Зарегистрироваться</div>
         </div>
       </div>
 
