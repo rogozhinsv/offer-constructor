@@ -16,7 +16,8 @@
             <button type="button" class="content-page__editbtn" (click)="onEditAvatar_Clicked($event)">
               <i class="mdi mdi-pencil"></i></button>
 
-          </div>
+                    <app-image-uploader *ngIf="IsEditingAvatar || (CurrentUser && !CurrentUser.avatar)" #ctrlAvatar [options]="imgUploaderOption"></app-image-uploader>
+                </div>
 
           <app-image-uploader *ngIf="IsEditingAvatar" #ctrlAvatar [options]="imgUploaderOption"></app-image-uploader>
         </div>

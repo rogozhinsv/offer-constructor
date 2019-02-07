@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
         else {
           this.srvcAuth.register(this.registerFormGroup.controls.email.value, this.registerFormGroup.controls.password.value).subscribe((data: RegisterUserResponse) => {
             if (data.result) {
-              this.router.navigate(["/"]);
+              this.router.navigate(["/personal"]);
             }
           });
         }
