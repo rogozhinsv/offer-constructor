@@ -1,7 +1,7 @@
 .top-banner {
   height: 705px;
   background: url("assets/img/bg-blue.jpg") no-repeat;
-  background-size: cover !important;
+  //background-size: cover !important;
   //background-position: center;
   &__wrap {
     margin: 0 auto;
@@ -39,7 +39,7 @@
   &__paper {
     height: 100%;
     width: 100%;
-    background: url('assets/img/paper.png') no-repeat ;
+    background: url('assets/img/paper-2.png') no-repeat ;
     background-size: 100% auto;
     background-position: center 115px;
     position: absolute;
@@ -77,7 +77,7 @@
     position: absolute;
     height: calc(100% + 50px);
     width: 100%;
-    background: url('assets/img/red-girl.png') no-repeat bottom;
+    background: url('assets/img/red-girl-2.png') no-repeat bottom;
     background-size: auto 100%;
     animation: girl  0.5s normal;
     animation-fill-mode:forwards;
