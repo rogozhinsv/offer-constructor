@@ -1,0 +1,34 @@
+<div class="header__right">
+  <div class="header__user" *ngIf="CurrentUser">
+    <div *ngIf="CurrentUser.avatar" class="header__user-photo" 
+    [ngStyle]="{ 'background-image': 'url(' + srvcAuth.getAvatarImageAsBase64(CurrentUser) + ')'}"></div>
+
+    <ngx-avatar size="40" *ngIf="!CurrentUser.avatar" [name]="srvcAuth.getUserName(CurrentUser)"></ngx-avatar>
+
+    <div class="header__user-name">{{srvcAuth.getUserName(CurrentUser)}}</div>
+  </div>
+  <div class="header__user header__user_auth" *ngIf="!CurrentUser">
+    <div class="header__user-name">
+      <a [routerLink]="['/login']" class="header__login" title="Войти">Войти</a>
+    </div>
+  </div>
+  <div class="header__menu" *ngIf="CurrentUser">
+
+    <i class="mdi mdi-menu" (click)="active = !active" [ngClass]="{active: active}"></i>
+    <div class="header__menu-list" [ngClass]="{active: active}">
+      <div class="header__menu-item">Ваши КП
+        <i class="mdi mdi-playlist-check"></i>
+      </div>
+      <div class="header__menu-item">Настройки
+        <i class="mdi mdi-settings"></i>
+      </div>
+      <div class="header__menu-item" [routerLink]="['/personal']">Профиль
+          <i class="mdi mdi-account"></i>
+        </div>
+      <div class="header__menu-item" (click)="btnLogoutClicked($event)">Выход
+        <i class="mdi mdi-export"></i>
+      </div>
+    </div>
+
+  </div>
+</div>

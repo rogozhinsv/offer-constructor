@@ -3,28 +3,14 @@
   <div class="header">
     <div class="header__wrap">
       <div class="header__left">
-        <a href="/" class="header__logo"></a>
+        <a [routerLink]="['/']" class="header__logo"></a>
         <div class="top-menu">
           <div class="top-menu__item">О продукте</div>
           <div class="top-menu__item">Цены</div>
         </div>
       </div>
-      <div class="header__right">
-        <div class="header__user">
-          <div class="header__user-photo" style="background: url('/assets/img/r1.jpg');"></div>
-          <div class="header__user-name">Ванадий Гейлерман</div>
-        </div>
-        <div class="header__menu">
 
-          <i class="mdi mdi-menu" (click)="active = !active" [ngClass]="{active: active}"></i>
-          <div class="header__menu-list" [ngClass]="{active: active}">
-            <div class="header__menu-item">Ваши КП <i class="mdi mdi-playlist-check"></i></div>
-            <div class="header__menu-item">Настройки <i class="mdi mdi-settings"></i></div>
-            <div class="header__menu-item" routerLink="/login" >Выход <i class="mdi mdi-export"></i></div>
-          </div>
-
-        </div>
-      </div>
+      <app-header-right></app-header-right>
     </div>
   </div>
 

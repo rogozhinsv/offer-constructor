@@ -5,6 +5,12 @@
   border-radius: 100px;
   cursor: pointer;
   transition: all 0.2s;
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
   &_big {
     height: 70px;
     font-size: 20px;

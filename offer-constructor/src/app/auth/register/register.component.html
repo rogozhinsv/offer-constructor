@@ -1,3 +1,33 @@
-<p>
-  register works!
-</p>
+<div class="login__wrap">
+  <div class="login">
+    <form [formGroup]="registerFormGroup" (submit)="onSubmit()">
+
+      <div class="login__header">Регистрация</div>
+
+      <div class="login__line">
+        <input #tbxLoginInput type="text" formControlName="email" class="input" placeholder="Email">
+      </div>
+      <div class="login__line" *ngIf="registerFormGroup.controls.email.errors && registerFormGroup.controls.email.errors.email">
+        <span class="login__line_error">Введён недопустимый формат электронной почты</span>
+      </div>
+      <div class="login__line" *ngIf="registerFormGroup.controls.email.errors && registerFormGroup.controls.email.errors.userExist">
+        <span class="login__line_error">Пользователь с такой почтой уже существует</span>
+      </div>
+
+      <div class="login__line">
+        <input type="password" class="input" formControlName="password" placeholder="Пароль">
+      </div>
+      <div class="login__line" *ngIf="registerFormGroup.controls.password.errors && registerFormGroup.controls.password.errors.minlength">
+        <span class="login__line_error">Пароль должен быть не менее 8 символов</span>
+      </div>
+
+      <div class="login__line">
+        <div class="login__btns">
+          <button class="btn btn_red" type="submit">
+            <i class="mdi mdi-lock-open-outline"></i>Создать</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
