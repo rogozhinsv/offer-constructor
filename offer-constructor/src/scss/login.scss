@@ -30,11 +30,15 @@
     }
   }
   &__logo {
-    background: url("/assets/img/logo-go-black.svg");
+    background: url("/assets/img/logo-go-black.svg") no-repeat;
     width: 100%;
     height: 50px;
     background-size: 100% auto;
     margin-bottom: $sp*6;
+    &_profil {
+
+      margin-bottom: $sp*2;
+    }
   }
   &__header {
     //font-weight: 900;
