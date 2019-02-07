@@ -14,6 +14,7 @@ import { HeaderComponent } from './controls/header/header.component';
 import { HeaderRightComponent } from './controls/header-right/header-right.component';
 import { ImageUploaderComponent } from './controls/image-uploader/image-uploader.component';
 import { AvatarModule } from 'ngx-avatar';
+import { WorkspaceComponent } from './workspace/workspace.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AvatarModule } from 'ngx-avatar';
     PersonalComponent,
     HeaderComponent,
     HeaderRightComponent,
-    ImageUploaderComponent
+    ImageUploaderComponent,
+    WorkspaceComponent
   ],
   imports: [
     BrowserModule,
