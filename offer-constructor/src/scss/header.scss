@@ -33,6 +33,11 @@
     color: white;
     text-transform: uppercase;
     font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    &:hover {
+      color: $blue;
+    }
   }
   &__user {
     flex-wrap: nowrap;

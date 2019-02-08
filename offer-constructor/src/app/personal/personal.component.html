@@ -1,50 +1,51 @@
 <app-header></app-header>
 
-<div class="content-page__wrap">
-  <div class="content-page">
+<div class="login__wrap">
+  <div class="login login_profile">
+    <div class="login__close"><i class="mdi mdi-close"></i></div>
     <div class="login__logo login__logo_profil"></div>
-    <div class="content-page__header">Профиль</div>
+    <div class="login__header">Профиль</div>
 
     <form (submit)="onSubmit()" [formGroup]="formGroupPersonal">
-      <div class="content-page_personal">
-        <div class="content-page_personal_left">
+      <div class="login_personal">
+        <div class="login_personal_left">
           <div *ngIf="CurrentUser && CurrentUser.avatar && !IsEditingAvatar">
-            <div *ngIf="CurrentUser && CurrentUser.avatar" class="content-page_personal_avatar"
+            <div *ngIf="CurrentUser && CurrentUser.avatar" class="login_personal_avatar"
                  [ngStyle]="{ 'background-image': 'url(' + srvcAuth.getAvatarImageAsBase64(CurrentUser) + ')'}"></div>
 
 
-            <button type="button" class="content-page__editbtn" (click)="onEditAvatar_Clicked($event)">
+            <button type="button" class="login__editbtn" (click)="onEditAvatar_Clicked($event)">
               <i class="mdi mdi-pencil"></i></button>
 
                     <app-image-uploader *ngIf="IsEditingAvatar || (CurrentUser && !CurrentUser.avatar)" #ctrlAvatar [options]="imgUploaderOption"></app-image-uploader>
                 </div>
 
-          <app-image-uploader *ngIf="IsEditingAvatar" #ctrlAvatar [options]="imgUploaderOption"></app-image-uploader>
+          <app-image-uploader class="login__avatar-image" *ngIf="IsEditingAvatar" #ctrlAvatar [options]="imgUploaderOption"></app-image-uploader>
         </div>
 
-        <div class="content-page_personal_rigth">
-          <div class="content-page__line">
-            <div class="content-page__label">E-mail</div>
+        <div>
+          <div class="login__line">
+            <div class="login__label">E-mail</div>
             <input formControlName="email" type="text" class="input">
           </div>
 
-          <div class="content-page__line">
-            <div class="content-page__label">Фамилия</div>
+          <div class="login__line">
+            <div class="login__label">Фамилия</div>
             <input formControlName="lastname" type="text" class="input" placeholder="Фамилия">
           </div>
 
-          <div class="content-page__line">
-            <div class="content-page__label">Имя</div>
+          <div class="login__line">
+            <div class="login__label">Имя</div>
             <input formControlName="firstname" type="text" class="input" placeholder="Имя">
           </div>
 
-          <div class="content-page__line">
-            <div class="content-page__label">Отчество</div>
+          <div class="login__line">
+            <div class="login__label">Отчество</div>
             <input formControlName="surname" type="text" class="input" placeholder="Отчество">
           </div>
 
-          <div class="content-page__line">
-            <div class="content-page_personal__btns">
+          <div class="login__line">
+            <div class="login__btns">
               <button type="submit" class="btn btn_red">
                 <i class="mdi mdi-content-save"></i>Сохранить
               </button>

@@ -9,7 +9,11 @@
 
   &:focus {
     background: #f1f1f1;
+    border: 1px solid $blue;
 
+  }
+  &:disabled {
+    background: #f1f1f1;
   }
 
   &.ng-invalid.ng-touched {

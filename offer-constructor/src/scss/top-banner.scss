@@ -30,10 +30,10 @@
         animation: paper  1s normal;
         animation-fill-mode:forwards;
       }
-      .top-banner__girl {
-        animation: girl2  1s normal;
-        animation-fill-mode:forwards;
-      }
+      //.top-banner__girl {
+      //  animation: girl2  1s normal;
+      //  animation-fill-mode:forwards;
+      //}
     }
 
   }
@@ -80,8 +80,8 @@
     width: 100%;
     background: url('assets/img/red-girl-2.png') no-repeat bottom;
     background-size: auto 100%;
-    animation: girl  0.5s normal;
-    animation-fill-mode:forwards;
+    //animation: girl  0.5s normal;
+    //animation-fill-mode:forwards;
     top: -50px;
     bottom: 0;
   }

@@ -9,6 +9,24 @@
   position: relative;
   z-index: 10;
   animation: logwin 0.5s;
+  &_profile {
+    padding: $sp*3 $sp*4;
+  }
+  &__label {
+    margin-bottom: $sp/2;
+  }
+  &__close {
+    position: absolute;
+    top: $sp;
+    right: $sp;
+    font-size: 18px;
+    color: black;
+    transition: all 0.2s;
+    cursor: pointer;
+    &:hover {
+      color: $red;
+    }
+  }
   &__wrap {
     //@include black-bg;
     //background: url("/assets/img/bg-blue.jpg");
@@ -25,6 +43,101 @@
     //align-items: center;
     //justify-content: flex-end;
 
+  }
+  &_personal {
+
+    &_rigth {
+      flex: 1;
+    }
+
+    &_left {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: $sp*2;
+      position: relative;
+      min-height: 250px;
+      .image-container {
+        border-radius: 50%;
+        border: none;
+        width: 250px !important;
+        height: 250px !important;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    &_avatar {
+      width: 250px;
+      border-radius: 50%;
+      height: 250px;
+      background-size: cover;
+    }
+
+    &__btns {
+      margin-top: $sp*2;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      &_center {
+        justify-content: center;
+        margin-right: 30px;
+        margin-top: 15px;
+
+      }
+
+
+    }
+  }
+  &__avatar {
+
+    &-image {
+      border-radius: 50%;
+      overflow: hidden;
+      .remove {
+        position: fixed !important;
+        left: 303px;
+        top: 197px !important;
+        background: $red;
+        color: white;
+        border-radius: 50%;
+        opacity: 1 !important;
+        border: 2px solid white !important;
+        outline: none;
+        transition: all 0.2s;
+        font-size: 0 !important;
+        &:before {
+          content: "\F156";
+          font-family: "Material Design Icons";
+          font-size: 18px;
+
+
+        }
+        &:hover {
+          color: $red;
+        }
+      }
+      .image-container {
+
+        box-shadow: none !important;
+      }
+      .add-image-btn {
+        background: none !important;
+        box-shadow: none !important;
+        color: black;
+        opacity: 1 !important;
+        font-weight: 300 !important;
+        transition: all 0.2s;
+        .plus {
+          font-size: 50px !important;
+        }
+        &:hover {
+          background: #e8e8e8 !important;
+          box-shadow: none !important;
+        }
+      }
+    }
   }
   &__logo {
     background: url("/assets/img/logo-go-black.svg") no-repeat;
@@ -64,8 +177,8 @@
     align-items: center;
     .btn_red {
       font-size: 14px !important;
-      padding: 0 $sp;
-      min-width: 120px;
+      padding: $sp $sp+5;
+      //min-width: 120px;
       outline: none;
       height: 49px;
       border: 1px solid transparent;
@@ -73,6 +186,28 @@
         border: 1px solid $red;
         color: black;
       }
+    }
+  }
+  &__editbtn {
+    position: absolute;
+    top: 20px;
+    right: 46px;
+    background: $red;
+    width: 39px;
+    height: 39px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+    outline: none;
+    &:hover {
+      color: $red;
+      background: white;
     }
   }
   &__link {

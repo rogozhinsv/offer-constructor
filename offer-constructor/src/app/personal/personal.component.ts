@@ -27,8 +27,8 @@ export class PersonalComponent implements OnInit {
 
   public formGroupPersonal: FormGroup;
   public imgUploaderOption: ImageUploaderOptions = {
-    thumbnailHeight: 200,
-    thumbnailWidth: 200,
+    thumbnailHeight: 250,
+    thumbnailWidth: 250,
     allowedImageTypes: ['image/png', 'image/jpeg'],
     thumbnailResizeMode: 'fill',
     autoUpload: false,
