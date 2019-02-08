@@ -3,6 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { LoginUserResponse } from '../../models/api-auth';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserProfileMenuService } from '../../services/user-profile-menu.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
     private srvcAuth: AuthService,
     private router: Router,
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private srvcUserProfileMenu: UserProfileMenuService
   ) { }
 
   ngOnInit() {
@@ -40,8 +42,13 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('offerConstructoJwtToken', data.token);
 
           this.route.queryParams.subscribe(params => {
-            let src = params["src"] || "/";
-            this.router.navigate([decodeURI(src)]);
+            if (params["src"]) {
+              this.router.navigate([decodeURI(params["src"])]);
+            }
+            else {
+              this.srvcUserProfileMenu.setLoginComponentVisibility(false);
+              this.srvcAuth.notifyAboutLogin();
+            }
           });
         }
         else {

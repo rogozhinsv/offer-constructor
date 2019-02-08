@@ -1,14 +1,19 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { environment } from "../../environments/environment";
-import { Observable } from "rxjs";
-import { ExistUserResponse, RegisterUserResponse, LoginUserResponse, CurrentUserResponse, User, UpdateUserResponse } from "../models/api-auth";
+import { Observable, Subject } from "rxjs";
+import { ExistUserResponse, RegisterUserResponse, LoginUserResponse, CurrentUserResponse, UpdateUserResponse, User } from "../models/api-auth";
 
 @Injectable({
     providedIn: "root"
 })
 export class AuthService {
-    constructor(private srvcHttpClient: HttpClient) { }
+    private _loginActionSubject: Subject<void> = new Subject();
+    public loginActionNotifyState$: Observable<void> = this._loginActionSubject.asObservable();
+
+    constructor(
+        private srvcHttpClient: HttpClient
+    ) { }
 
     public isAuth(): Observable<boolean> {
         let url = environment.api + "/isAuth";
@@ -73,6 +78,10 @@ export class AuthService {
         };
 
         return this.srvcHttpClient.post<any>(url, request);
+    }
+
+    public notifyAboutLogin(): void {
+        this._loginActionSubject.next();
     }
 
     public currentUser(): Observable<CurrentUserResponse> {

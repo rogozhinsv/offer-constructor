@@ -6,7 +6,7 @@
   </div>
   <div class="header__user header__user_auth" *ngIf="!CurrentUser">
     <div class="header__user-name">
-      <a [routerLink]="['/login']" class="header__login" title="Войти">Войти</a>
+      <div (click)="showLoginComponent();" class="header__login" title="Войти">Войти</div>
     </div>
   </div>
   <div class="header__menu" *ngIf="CurrentUser">

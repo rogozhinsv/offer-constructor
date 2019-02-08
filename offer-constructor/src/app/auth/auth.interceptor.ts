@@ -30,7 +30,7 @@ export class TokenInterceptor implements HttpInterceptor {
                 }, (err: any) => {
                     if (err instanceof HttpErrorResponse) {
                         if (err.status === 401 || err.status == 403) {
-                            this.router.navigate(["/login"], { queryParams: { src: this.router.url } });
+                            this.router.navigate(["/"], { queryParams: { src: this.router.url, action: "login" } });
                         }
                     }
                 }
