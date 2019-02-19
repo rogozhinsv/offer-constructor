@@ -7,7 +7,6 @@ import { WorkspaceComponent } from '../workspace/workspace.component';
 
 const routes: Routes = [
     { path: '', component: MainComponent },
-    { path: 'personal', component: PersonalComponent },
     { path: 'workspace', component: WorkspaceComponent }
 ];
 

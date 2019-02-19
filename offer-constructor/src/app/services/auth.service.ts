@@ -20,24 +20,8 @@ export class AuthService {
         return this.srvcHttpClient.get<any>(url);
     }
 
-    public getAvatarImageAsBase64(user: User): string {
-        if (user.avatar) {
-            let result = this.arrayBufferToBase64(user.avatar.data);
-            return 'data:image/png;base64,' + result;
-        }
-        else {
-            return null;
-        }
-    }
-
-    private arrayBufferToBase64(buffer: any) {
-        var binary = '';
-        var bytes = new Uint8Array(buffer);
-        var len = bytes.byteLength;
-        for (var i = 0; i < len; i++) {
-            binary += String.fromCharCode(bytes[i]);
-        }
-        return window.btoa(binary);
+    public createUserAvatarLink(user: User): string {
+        return environment.api + "/userPhoto/" + user.id;
     }
 
     public getUserName(user: User): string {

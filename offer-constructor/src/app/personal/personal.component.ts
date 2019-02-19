@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { User, UpdateUserResponse } from '../models/api-auth';
+import { User } from '../models/api-auth';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ImageUploaderOptions } from '../controls/image-uploader/image-uploader.interfaces';
 import { ImageUploaderComponent, Status } from '../controls/image-uploader/image-uploader.component';
-import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { UserProfileMenuService } from '../services/user-profile-menu.service';
 
 @Component({
   selector: 'app-personal',
@@ -40,7 +40,8 @@ export class PersonalComponent implements OnInit {
   constructor(
     private srvcAuth: AuthService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private srvcUserMenu: UserProfileMenuService
   ) {
     this.initFormGroup();
   }
@@ -80,15 +81,15 @@ export class PersonalComponent implements OnInit {
 
         if (this.ctrlAvatar && this.ctrlAvatar.status == Status.Selected) {
           this.srvcAuth.updateUserAvatar(this._currentUser.id, this.ctrlAvatar.fileToUpload).subscribe(data => {
-            this._currentUser.avatar = data.data.avatar;
-            this._isEditingAvatar = false;
+            this._currentUser.avatar = true;
           });
-        }
-        else {
-          this._isEditingAvatar = false;
         }
       });
     }
+  }
+
+  public closeForm(event: any): void {
+    this.srvcUserMenu.setProfileComponentVisibility(false);
   }
 
   public onEditAvatar_Clicked(event: any): void {
@@ -96,6 +97,6 @@ export class PersonalComponent implements OnInit {
   }
 
   public onBtnCancel_Clicked(event: any): void {
-    this.router.navigate(["/"]);
+    this.srvcUserMenu.setProfileComponentVisibility(false);
   }
 }

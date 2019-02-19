@@ -13,7 +13,6 @@ import { PersonalComponent } from './personal/personal.component';
 import { HeaderComponent } from './controls/header/header.component';
 import { HeaderRightComponent } from './controls/header-right/header-right.component';
 import { ImageUploaderComponent } from './controls/image-uploader/image-uploader.component';
-import { AvatarModule } from 'ngx-avatar';
 import { WorkspaceComponent } from './workspace/workspace.component';
 
 @NgModule({
@@ -33,8 +32,7 @@ import { WorkspaceComponent } from './workspace/workspace.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
-    AvatarModule
+    ReactiveFormsModule
   ],
   providers: [
     {

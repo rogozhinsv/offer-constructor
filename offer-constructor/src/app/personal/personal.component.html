@@ -1,8 +1,9 @@
-<app-header></app-header>
-
 <div class="login__wrap">
   <div class="login login_profile">
-    <div class="login__close"><i class="mdi mdi-close"></i></div>
+    <div class="login__close" (click)="closeForm($event)">
+      <i class="mdi mdi-close"></i>
+    </div>
+
     <div class="login__logo login__logo_profil"></div>
     <div class="login__header">Профиль</div>
 
@@ -11,16 +12,18 @@
         <div class="login_personal_left">
           <div *ngIf="CurrentUser && CurrentUser.avatar && !IsEditingAvatar">
             <div *ngIf="CurrentUser && CurrentUser.avatar" class="login_personal_avatar"
-                 [ngStyle]="{ 'background-image': 'url(' + srvcAuth.getAvatarImageAsBase64(CurrentUser) + ')'}"></div>
+              [ngStyle]="{ 'background-image': 'url(' + srvcAuth.createUserAvatarLink(CurrentUser) + ')'}"></div>
 
 
             <button type="button" class="login__editbtn" (click)="onEditAvatar_Clicked($event)">
               <i class="mdi mdi-pencil"></i></button>
 
-                    <app-image-uploader *ngIf="IsEditingAvatar || (CurrentUser && !CurrentUser.avatar)" #ctrlAvatar [options]="imgUploaderOption"></app-image-uploader>
-                </div>
+            <app-image-uploader *ngIf="IsEditingAvatar || (CurrentUser && !CurrentUser.avatar)" #ctrlAvatar
+              [options]="imgUploaderOption"></app-image-uploader>
+          </div>
 
-          <app-image-uploader class="login__avatar-image" *ngIf="IsEditingAvatar" #ctrlAvatar [options]="imgUploaderOption"></app-image-uploader>
+          <app-image-uploader class="login__avatar-image" *ngIf="IsEditingAvatar" #ctrlAvatar
+            [options]="imgUploaderOption"></app-image-uploader>
         </div>
 
         <div>
@@ -49,7 +52,7 @@
               <button type="submit" class="btn btn_red">
                 <i class="mdi mdi-content-save"></i>Сохранить
               </button>
-              <div class="login__link"  (click)="onBtnCancel_Clicked($event);">Отмена</div>
+              <div class="login__link" (click)="onBtnCancel_Clicked($event);">Отмена</div>
             </div>
           </div>
         </div>

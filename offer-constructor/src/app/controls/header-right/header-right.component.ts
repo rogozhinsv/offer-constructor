@@ -13,6 +13,11 @@ import { Subscription } from 'rxjs';
 export class HeaderRightComponent implements OnInit, OnDestroy {
   private _subscrptLoginNotify: Subscription;
 
+  private _isVisibleMenu: boolean = false;
+  public get IsVisibleMenu(): boolean {
+    return this._isVisibleMenu;
+  }
+
   private _currentUser: User;
   public get CurrentUser(): User {
     return this._currentUser;
@@ -55,5 +60,17 @@ export class HeaderRightComponent implements OnInit, OnDestroy {
 
   public showLoginComponent(): void {
     this.srvcUserProfileMenu.setLoginComponentVisibility(true);
+  }
+
+  public btnProfileClickec(event: any): void {
+    this._isVisibleMenu = false;
+    this.srvcUserProfileMenu.setLoginComponentVisibility(false);
+    this.srvcUserProfileMenu.setRegisterComponentVisibility(false);
+
+    this.srvcUserProfileMenu.setProfileComponentVisibility(true);
+  }
+
+  public toggleMenuVisibility(): void {
+    this._isVisibleMenu = !this._isVisibleMenu;
   }
 }

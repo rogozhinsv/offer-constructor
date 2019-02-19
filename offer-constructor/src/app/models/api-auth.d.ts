@@ -22,7 +22,7 @@ export interface User {
     firstname: string;
     lastname: string;
     surname: string;
-    avatar?: any;
+    avatar: boolean;
 }
 
 export interface UpdateUserResponse {

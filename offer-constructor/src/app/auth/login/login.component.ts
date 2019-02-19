@@ -35,6 +35,15 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  public closeLoginForm(event: any): void {
+    this.srvcUserProfileMenu.setLoginComponentVisibility(false);
+  }
+
+  public btnRegisterClicked(event: any): void {
+    this.srvcUserProfileMenu.setLoginComponentVisibility(false);
+    this.srvcUserProfileMenu.setRegisterComponentVisibility(true);
+  }
+
   public onSubmit(): void {
     if (this.loginFormGroup.valid) {
       this.srvcAuth.login(this.loginFormGroup.controls.email.value, this.loginFormGroup.controls.password.value).subscribe((data: LoginUserResponse) => {
